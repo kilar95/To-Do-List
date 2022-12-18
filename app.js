@@ -76,10 +76,10 @@ app.post("/", function(req, res) {
     name: newTaskName
   });
 
-  if (listName === "Today") { /* quindi se è la lista principale */
+  if (listName === "Today") { 
     task.save();
     res.redirect("/");
-  } else { /* se siamo nella custom list */
+  } else { 
     List.findOne({name: listName}, function(err, foundList){
       foundList.items.push(task);
       foundList.save();
