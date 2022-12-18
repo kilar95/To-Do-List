@@ -17,13 +17,11 @@
 
     <form class="item" action="/" method="post">
       <input type="text" name="newTask" placeholder="Insert new task">
-      <button type="submit" name="button" value="<%= listTitle %>">+</button>  <!-- il valore del bottone mi serve per sapere in quale lista sto inserendo il nuovo item (se nella lista del giorno o in quella di lavoro) -->
+      <button type="submit" name="button" value="<%= listTitle %>">+</button>  
     </form>
   </div>
 
 
-
-  <!-- controlli di flusso su ejs e uso dei tags -->
 
   <!-- <% if (listTitle === "Friday") { %>
         <h1 style="color: purple"><%= listTitle %> To Do List! </h1>
