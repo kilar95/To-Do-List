@@ -7,8 +7,8 @@ const date = require(__dirname + "/date.js");
 const _ = require("lodash");
 
 
-app.use(express.urlencoded({extended: true})); /* to use express bodyparser (serve per analizzare i dati inseriti nel form [req.body])*/
-app.set('view engine', 'ejs'); /* to use ejs files */
+app.use(express.urlencoded({extended: true})); 
+app.set('view engine', 'ejs'); 
 app.use(express.static("public"));
 
 
