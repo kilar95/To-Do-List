@@ -1,0 +1,34 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+
+  <div class="box">
+    <% newTasks.forEach(function(item) { %>
+      <form action="/delete" method="post">
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()">
+          <p><%= item.name %></p>
+        </div>
+        <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+      </form>
+    <% }); %>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="newTask" placeholder="Insert new task">
+      <button type="submit" name="button" value="<%= listTitle %>">+</button>  <!-- il valore del bottone mi serve per sapere in quale lista sto inserendo il nuovo item (se nella lista del giorno o in quella di lavoro) -->
+    </form>
+  </div>
+
+
+
+  <!-- controlli di flusso su ejs e uso dei tags -->
+
+  <!-- <% if (listTitle === "Friday") { %>
+        <h1 style="color: purple"><%= listTitle %> To Do List! </h1>
+    <% } else { %>
+        <h1 style="color: blue"><%= listTitle %> To Do List! </h1>
+    <% } %>   */ -->
+
+<%- include("footer") -%>
